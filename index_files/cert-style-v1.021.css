@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&display=swap');
+
+/* Main Styling        */
+.tg_logo_main { max-width:210px; margin-top:10px;}
+.tg_SealCertContainer { font-family: 'Montserrat', sans-serif !important; line-height:1.5 !important; }
+.tg_SealCertContainer, .tg_SealCertContainer a, .tg_SealCertContainer div  { font-family: 'Montserrat', sans-serif !important; }
+.tg_SealCertDomain { font-size:16px; text-transform:lowercase; display:block; color:#2E871C; font-weight:600; }
+.tg_SealCertVerDate { font-size:10px; text-transform:uppercase; display:block; color:#333333; font-weight:600; }
+.tg_certConContainer { margin:10px 0px 0 0; padding:0px; font-size:10px; width:100%; position:relative; }
+#tg_certContentUl {list-style:none;padding:0px;margin:0px;}
+#tg_certContentUl li {display: block;width: 100%;float: left;padding: 5px 0 5px;border-top: 1px solid #f6f6f6;}
+.tg_certBadge {width:25%;padding:0px;float:left;}
+.tg_certBadge img {width:60% !important;display:block !important;margin: 0 auto !important;}
+.tg_certConDetail {width:75%;padding:0px;float:left;text-align:left;}
+.tg_certDrop {width:10%;padding:0px;float:left;cursor:pointer;}
+.tg_certConScan{display:block;font-weight:600;margin-top:5px;font-size:11px !important;height:5px !important; max-height:5px !important;}
+.tg_certConScanDate{color:#2E871C;font-size:9px;font-weight:600;margin-top:10px!important;display:block!important;}
+.tg_cert-drop-arrow {position:relative;top:10px;}
+#tg_certFooterNote {font-size:8px;text-align:center;margin:5px 0 0px !important;}
+.tg_certSecScanMore, .tg_certSslScanMore, .tg_certMalScanMore,.tg_certGdprScanMore {font-size:8px; display:block;}
+#tg_moreDetails {position:absolute;right:7px;top:5px;font-size:8px;color:#2f2f2f;text-decoration:none;}
+#tg_moreDetails:hover { color:#2E871C;text-decoration:underline;}
+.tg_SealCertDomain::first-letter,
+#tg_certFooterNote::first-letter {
+    text-transform: capitalize;
+}
+
+/* Custom css Icon */
+.tg-arrow-up {border: solid #2F2F2F;border-width: 0 2px 2px 0;display: inline-block;padding: 3px;transform: rotate(-135deg);-webkit-transform: rotate(-135deg);-webkit-transform: rotate(-135deg);}
+.tg-arrow-down {border: solid #2F2F2F;border-width: 0 2px 2px 0;display: inline-block;padding: 3px;transform: rotate(45deg);-webkit-transform: rotate(45deg);-webkit-transform: rotate(45deg);}
+.tg-arrow-left {border: solid #FFFFFF;border-width: 0 2px 2px 0;display: inline-block;padding: 3px;transform: rotate(135deg);-webkit-transform: rotate(135deg);-webkit-transform: rotate(135deg);}
+.tg-arrow-bottom {border: solid #FFFFFF;border-width: 0 2px 2px 0;display: inline-block;padding: 3px;transform: rotate(-45deg);-webkit-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
+.tg-arrow-right {border: solid #2f2f2f;border-width: 0 1px 1px 0;display: inline-block;padding: 2px;transform: rotate(-45deg);-webkit-transform: rotate(-45deg);-webkit-transform: rotate(-45deg);}
+.text-white{color:#ffffff;}
+
+/* tgscriptLeft */
+#tg_1-left {cursor:pointer;}
+#tg_certSealToggle { color: #fff; position: absolute; left: -10px; top: 45%; cursor: pointer; transition: 2s; height:auto; }
+#tg_certSealToggle b { top: 46%; position: relative; }
+#tg_SealCertificateLeft { box-shadow:0 0 4px 0px #cccccc;border:0px solid #f2f2f2;height:auto; width:260px; position:fixed; left:-500px; top:10%; background:#ffffff; border-left:6px solid #2E871C; border-radius:0 5px 5px 0; text-align:center; padding:20px 10px 10px; z-index:999999; }
+.tg_hideCertificate { animation-name: tg_certHide ; animation-duration: 1s; animation-timing-function: ease-in; animation-fill-mode:forwards; }
+@keyframes tg_certHide { from {left: 0;} to {left:-500px;} }
+.tg_showCertificate { animation-name: tg_showHide ; animation-duration: 1s; animation-timing-function: ease-out; animation-fill-mode:forwards; }
+@keyframes tg_showHide { from {left: -500px;} to {left:0px;} }
+
+
+/* tgscriptRight */
+#tg_1-right {cursor:pointer;}
+#tg_certSealToggleRight { color: #fff; position: absolute; right: -10px; top: 45%; cursor: pointer; transition: 2s; height:auto; }
+#tg_certSealToggleRight b { top: 46%; position: relative; }
+#tg_SealCertificateRight { box-shadow:0 0 4px 0px #cccccc;border:0px solid #f2f2f2;height:auto; width:260px; position:fixed; right:-500px; top:10%; background:#ffffff; border-right:6px solid #2E871C; border-radius:5px 0 0 5px ; text-align:center; padding:20px 10px 10px; z-index:999999; }
+
+.tg_hideCertificateRight { animation-name: tg_certHideRight ; animation-duration: 1s; animation-timing-function: ease-in; animation-fill-mode:forwards; }
+@keyframes tg_certHideRight { from {right: 0px;} to {right:-500px;} }
+.tg_showCertificateRight { animation-name: tg_showHideRight ; animation-duration: 1s; animation-timing-function: ease-out; animation-fill-mode:forwards; }
+@keyframes tg_showHideRight { from {right: -500px;} to {right:0px;} }
+
+
+/* tgscriptBottomLeft */
+#tg_1-bleft {cursor:pointer;}
+#tg_certSealTogglebleft {color: #fff;position: absolute;left: 50%;bottom: -10px;cursor: pointer;transition: 2s;height: auto;z-index: 9999;transform: rotate(90deg); }
+#tg_certSealTogglebleft b { bottom:0px; position: relative; }
+#tg_SealCertificatebleft { box-shadow:0 0 4px 0px #cccccc !important;border:0px solid #f2f2f2 !important;height:auto !important; width:260px !important; position:fixed; left:0px !important; bottom:-700px; background:#ffffff !important; border-bottom:6px solid #2E871C !important; border-radius:5px 5px 0 0 !important; text-align:center !important; padding:20px 10px 10px !important; z-index:999999 !important; }
+
+.tg_hideCertificatebLeft { animation-name: tg_certHidebLeft ; animation-duration: 1s; animation-timing-function: ease-in; animation-fill-mode:forwards; }
+@keyframes tg_certHidebLeft { from {bottom: 0px;} to {bottom:-500px;} }
+.tg_showCertificatebLeft { animation-name: tg_showHidebLeft ; animation-duration: 1s; animation-timing-function: ease-out; animation-fill-mode:forwards; }
+@keyframes tg_showHidebLeft { from {bottom: -500px;} to {bottom:0px;} }
+
+
+/* tgscriptBottomRight */
+#tg_1-bright {cursor:pointer;}
+#tg_certSealTogglebRight {color: #fff;position: absolute;right: 50%;bottom: -10px;cursor: pointer;transition: 2s;height: auto;z-index: 9999;transform: rotate(90deg); }
+#tg_certSealTogglebRight b { bottom:0px; position: relative; }
+#tg_SealCertificatebRight { box-shadow:0 0 4px 0px #cccccc !important;border:0px solid #f2f2f2 !important;height:auto !important; width:260px !important; position:fixed !important; right:0px !important; bottom:-700px; background:#ffffff !important; border-bottom:6px solid #2E871C !important; border-radius:5px 5px 0 0 !important; text-align:center !important; padding:20px 10px 10px !important; z-index:999999 !important; }
+
+.tg_hideCertificatebRight { animation-name: tg_certHidebRight ; animation-duration: 1s; animation-timing-function: ease-in; animation-fill-mode:forwards; }
+@keyframes tg_certHidebRight { from {bottom: 0px;!important;} to {bottom:-500px;!important;} }
+.tg_showCertificatebRight { animation-name: tg_showHidebRight ; animation-duration: 1s; animation-timing-function: ease-out; animation-fill-mode:forwards; }
+@keyframes tg_showHidebRight { from {bottom: -500px;!important;} to {bottom:0px;!important;} }
+
+
+.tg_certContentUl .sealParagraph { line-height: 15px !important; }
+#tg_moreDetails {text-shadow:none !Important; }
+#tg_certFooterNote { line-height:10px !important; }
+.tg_certSslScanMore div { line-height:15px !important; }
+.tg_certMalScanMore div { line-height:15px !important; }
+.tg_certSecScanMore div { line-height:15px !important; }
+.tg_certConScanDate { line-height:1.5 }
+#secScan { line-height: 15px; }
+#malwareScan { line-height: 15px; }
+#sslScan { line-height: 15px; }
+.tgBlockImg { padding-right:5px}
+.tgStackSeal {display:inline-block}
+#tgfloat-img {margin-top: -2px}
+.tgBlockText {display:none;}

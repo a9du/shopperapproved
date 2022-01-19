@@ -1,0 +1,37 @@
+function myFunction() {
+    document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ? (document.getElementById("saNavSec").className = "row py-2") : (document.getElementById("saNavSec").className = "row py-3");
+}
+//$(function () {
+//    $("#saMobileBtn").click(function () {
+//        $("#mobileMenuContainer").css("top", "0");
+//    }),
+//        $("#saMmenuClose").click(function () {
+//            $("#mobileMenuContainer").css("top", "-2000px");
+//        });
+//}),
+//    (window.onscroll = function () {
+//        myFunction();
+//    }),
+//    $(function () {
+//        $("#sa-search-btn").click(function () {
+//            $("#sa-search-frm").trigger("focus");
+//        });
+//    }),
+//    $(document).ready(function () {
+//        $(".dropdown, .btn-group").hover(function () {
+//            var e = $(this).children(".dropdown-menu");
+//            e.is(":visible") && e.parent().toggleClass("open");
+//        }),
+//            $("#tg-mobile").click(function () {
+//                $("#tg_1-bleft").trigger("click");
+//            }),
+//            $(".dropdown-menu").mouseleave(function () {
+//                $(".dropdown").removeClass("open"), $(this).removeClass("open");
+//            }),
+//            $(".dropdown").mouseleave(function () {
+//                $(this).removeClass("show"), $(".dropdown-menu").removeClass("show");
+//            }),
+//            $(document).mouseup(function () {
+//                $("#tg_SealCertificatebleft").hasClass("tg_showCertificatebLeft") && ($("#tg_SealCertificatebleft").removeClass("tg_showCertificatebLeft"), $("#tg_SealCertificatebleft").addClass("tg_hideCertificatebLeft"));
+//            });
+//    });

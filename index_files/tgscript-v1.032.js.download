@@ -1,0 +1,595 @@
+let tg_script_side_left =
+  '<div class="tg_SealCertContainer">\n' +
+  '    <div id="tg_SealCertificateLeft">\n' +
+  '       <a target=\'_blank\' href="#" aria-label="More Certificate Details (opens in a new tab)" aria-label="More Certificate Details (opens in a new tab)" id="tg_moreDetails">More Details <i class="tg-arrow-right"></i></a>\n' +
+  '        <img id="tg-cert-logo" class="tg_logo_main" alt="Trust Guard" style="width:210px!important;height:40px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=" alt="logo">\n' +
+  '        <span class="tg_SealCertDomain"></span>\n' +
+  '        <span class="tg_SealCertVerDate"><span class="tg_SealCertVerText"></span> <span class="tg_SealCertVerDateText"></span></span>\n' +
+  "\n" +
+  '        <div class="tg_certConContainer">\n' +
+  '            <ul id="tg_certContentUl">\n' +
+  '                <li id="secScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_security_icon" alt="Trust Guard - Security Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Website is Security Scanned</span>\n' +
+  '                        <span class="tg_certConScanDate">Security Scan Passed: <span id="tg_certConScanDateText"></span></span>\n' +
+  '                        <div class="tg_certSecScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFreqText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="malwareScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_malware_icon" alt="Trust Guard - Malware Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan"><span id="tg_certConScanText">No Malware Detected</span></span>\n' +
+  '                        <span class="tg_certConScanDate">Malware Scan Passed: <span id="tg_certMalwareScanDateText"></span></span>\n' +
+  '                        <div class="tg_certMalScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFrequencyText"></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="sslScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_ssl_icon" alt="Trust Guard - SSL Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Active SSL Certificate</span>\n' +
+  '                        <span class="tg_certConScanDate">Encrypted By: <span id="tg_certSslScanVendorText"></span></span>\n' +
+  '                        <div class="tg_certSslScanMore">\n' +
+  '                            <div>Expiration Date: <span id="tg_certSslScanExpText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  "                <li>\n" +
+  '                    <p id="tg_certFooterNote"><span class=\'tg_domain_name\'></span> <span class="sealParagraph"</span>\n</p>\n' +
+  "                </li>\n" +
+  "\n" +
+  "            </ul>\n" +
+  "\n" +
+  "        </div>\n" +
+  "\n" +
+  '        <div style="display:none;" id="tg_div_content"></div>\n' +
+  '        <span style="display:none;" class="tg_domain_only"></span>\n' +
+  "    </div>\n" +
+  "</div>";
+
+let tg_script_side_right =
+  '<div class="tg_SealCertContainer">\n' +
+  '    <div id="tg_SealCertificateRight">\n' +
+  '       <a target=\'_blank\' href="#" aria-label="More Certificate Details (opens in a new tab)" id="tg_moreDetails">More Details <i class="tg-arrow-right"></i></a>\n' +
+  '        <img id="tg-cert-logo" class="tg_logo_main" alt="Trust Guard" style="width:210px!important;height:40px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=" alt="logo">\n' +
+  '        <span class="tg_SealCertDomain"></span>\n' +
+  '        <span class="tg_SealCertVerDate"><span class="tg_SealCertVerText"></span> <span class="tg_SealCertVerDateText"></span></span>\n' +
+  "\n" +
+  '        <div class="tg_certConContainer">\n' +
+  '            <ul id="tg_certContentUl">\n' +
+  '                <li id="secScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_security_icon" alt="Trust Guard - Security Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Website is Security Scanned</span>\n' +
+  '                        <span class="tg_certConScanDate">Security Scan Passed: <span id="tg_certConScanDateText"></span></span>\n' +
+  '                        <div class="tg_certSecScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFreqText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="malwareScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_malware_icon" alt="Trust Guard - Malware Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan"><span id="tg_certConScanText">No Malware Detected</span></span>\n' +
+  '                        <span class="tg_certConScanDate">Malware Scan Passed:  <span id="tg_certMalwareScanDateText"></span></span>\n' +
+  '                        <div class="tg_certMalScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFrequencyText"></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="sslScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_ssl_icon" alt="Trust Guard - SSL Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Active SSL Certificate</span>\n' +
+  '                        <span class="tg_certConScanDate">Encrypted By: <span id="tg_certSslScanVendorText"></span></span>\n' +
+  '                        <div class="tg_certSslScanMore">\n' +
+  '                            <div>Expiration Date: <span id="tg_certSslScanExpText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  "                <li>\n" +
+  '                    <p id="tg_certFooterNote"><span class=\'tg_domain_name\'></span> <span class="sealParagraph"</span>\n</p>\n' +
+  "                </li>\n" +
+  "\n" +
+  "            </ul>\n" +
+  "\n" +
+  "        </div>\n" +
+  "\n" +
+  '        <div style="display:none;" id="tg_div_content"></div>\n' +
+  '        <span style="display:none;" class="tg_domain_only"></span>\n' +
+  "    </div>\n" +
+  "</div>";
+
+let tg_script_bottom_left =
+  '<div class="tg_SealCertContainer">\n' +
+  '    <div id="tg_SealCertificatebleft">\n' +
+  '       <a target=\'_blank\' href="#" aria-label="More Certificate Details (opens in a new tab)" id="tg_moreDetails">More Details <i class="tg-arrow-right"></i></a>\n' +
+  '        <img id="tg-cert-logo" class="tg_logo_main" alt="Trust Guard" style="width:210px!important;height:40px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=" alt="logo">\n' +
+  '        <span class="tg_SealCertDomain"></span>\n' +
+  '        <span class="tg_SealCertVerDate"><span class="tg_SealCertVerText"></span> <span class="tg_SealCertVerDateText"></span></span>\n' +
+  "\n" +
+  '        <div class="tg_certConContainer">\n' +
+  '            <ul id="tg_certContentUl">\n' +
+  '                <li id="secScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_security_icon" alt="Trust Guard - Security Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Website is Security Scanned</span>\n' +
+  '                        <span class="tg_certConScanDate">Security Scan Passed: <span id="tg_certConScanDateText"></span></span>\n' +
+  '                        <div class="tg_certSecScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFreqText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="malwareScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_malware_icon" alt="Trust Guard - Malware Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan"><span id="tg_certConScanText">No Malware Detected</span></span>\n' +
+  '                        <span class="tg_certConScanDate">Malware Scan Passed: <span id="tg_certMalwareScanDateText"></span></span>\n' +
+  '                        <div class="tg_certMalScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFrequencyText"></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="sslScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_ssl_icon" alt="Trust Guard - SSL Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Active SSL Certificate</span>\n' +
+  '                        <span class="tg_certConScanDate">Encrypted By: <span id="tg_certSslScanVendorText"></span></span>\n' +
+  '                        <div class="tg_certSslScanMore">\n' +
+  '                            <div>Expiration Date: <span id="tg_certSslScanExpText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  "                <li>\n" +
+  '                    <p id="tg_certFooterNote"><span class=\'tg_domain_name\'></span> <span class="sealParagraph"</span>\n</p>\n' +
+  "                </li>\n" +
+  "\n" +
+  "            </ul>\n" +
+  "\n" +
+  "        </div>\n" +
+  "\n" +
+  '        <div style="display:none;" id="tg_div_content"></div>\n' +
+  '        <span style="display:none;" class="tg_domain_only"></span>\n' +
+  "    </div>\n" +
+  "</div>";
+
+let tg_script_bottom_right =
+  '<div class="tg_SealCertContainer">\n' +
+  '    <div id="tg_SealCertificatebRight">\n' +
+  '        <a target=\'_blank\' href="#" aria-label="More Certificate Details (opens in a new tab)" id="tg_moreDetails">More Details <i class="tg-arrow-right"></i></a>\n' +
+  '        <img id="tg-cert-logo" class="tg_logo_main" alt="Trust Guard" style="width:210px!important;height:40px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=" alt="logo">\n' +
+  '        <span class="tg_SealCertDomain"></span>\n' +
+  '        <span class="tg_SealCertVerDate"><span class="tg_SealCertVerText"></span> <span class="tg_SealCertVerDateText"></span></span>\n' +
+  "\n" +
+  '        <div class="tg_certConContainer">\n' +
+  '            <ul id="tg_certContentUl">\n' +
+  '                <li id="secScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_security_icon" alt="Trust Guard - Security Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Website is Security Scanned</span>\n' +
+  '                        <span class="tg_certConScanDate">Security Scan Passed: <span id="tg_certConScanDateText"></span></span>\n' +
+  '                        <div class="tg_certSecScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFreqText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="malwareScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_malware_icon" alt="Trust Guard - Malware Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan"><span id="tg_certConScanText">No Malware Detected</span></span>\n' +
+  '                        <span class="tg_certConScanDate">Malware Scan Passed: <span id="tg_certMalwareScanDateText"></span></span>\n' +
+  '                        <div class="tg_certMalScanMore">\n' +
+  '                            <div>Scan Frequency: <span id="tg_certConScanFrequencyText"></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  '                <li id="sslScan">\n' +
+  '                    <div class="tg_certBadge">\n' +
+  '                        <img id="tg_ssl_icon" alt="Trust Guard - SSL Scanned" style="width:36px!important;height:38px!important;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8=">\n' +
+  "                    </div>\n" +
+  '                    <div class="tg_certConDetail">\n' +
+  '                        <span class="tg_certConScan">Active SSL Certificate</span>\n' +
+  '                        <span class="tg_certConScanDate">Encrypted By: <span id="tg_certSslScanVendorText"></span></span>\n' +
+  '                        <div class="tg_certSslScanMore">\n' +
+  '                            <div>Expiration Date: <span id="tg_certSslScanExpText"></span></div>\n' +
+  "\n" +
+  "                        </div>\n" +
+  "                    </div>\n" +
+  "                </li>\n" +
+  "                <li>\n" +
+  '                    <p id="tg_certFooterNote"><span class=\'tg_domain_name\'></span> <span class="sealParagraph"</span>\n</p>\n' +
+  "                </li>\n" +
+  "\n" +
+  "            </ul>\n" +
+  "\n" +
+  "        </div>\n" +
+  "\n" +
+  '        <div style="display:none;" id="tg_div_content"></div>\n' +
+  '        <span style="display:none;" class="tg_domain_only"></span>\n' +
+  "    </div>\n" +
+  "</div>";
+
+
+// JSON Call FUnction
+function tg_loadJSON(path, success, error) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        if (success)
+          success(JSON.parse(xhr.responseText));
+      } else {
+        if (error)
+          error(xhr);
+      }
+    }
+  };
+  xhr.open("GET", path, true);
+  xhr.send();
+}
+
+function tg_hide(elmName) {
+  document.getElementById(elmName).style.display = 'none';
+}
+function tg_show() {
+  document.getElementById(elmName).style.display = 'block';
+}
+
+function tg_hide_by_class(elmName) {
+  document.getElementsByClassName(elmName)[0].style.display = 'none';
+}
+function tg_show_by_class() {
+  document.getElementsByClassName(elmName)[0].style.display = 'block';
+}
+
+function tg_set_source(elmName, newSource) {
+  var tgElm = document.getElementById(elmName);
+  tgElm.src = newSource;
+}
+
+function tg_set_href(elmName, newHref) {
+  var tgElm = document.getElementById(elmName);
+  tgElm.href = newHref;
+}
+
+function tg_add_class(elmName, className) {
+  var tgElm = document.getElementById(elmName);
+  tgElm.classList.add(className);
+}
+
+function tg_remove_class(elmName, className) {
+  var tgElm = document.getElementById(elmName);
+  tgElm.classList.remove(className);
+}
+
+//First validate it or exit on an error
+function tg_vjs(str) {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+}
+function tg_gdata(id) {
+  tg_loadJSON("https://api.trustguard.com/seal-details/" + id,
+    function (data) {
+      document.getElementById("tg_div_content").textContent = JSON.stringify(data);
+      let tg_vals = JSON.parse(document.getElementById("tg_div_content").textContent);
+
+      if (tg_vals["malwareStatus"].toLowerCase() !== "clean") {
+        tg_hide('malwareScan');
+      }
+      if (tg_vals["sslStatus"].toLowerCase() !== "active") {
+        tg_hide('sslScan');
+      }
+
+      tg_set_source('tg-cert-logo', tg_vals["tgLogo"]);
+      tg_set_source('tg_security_icon', tg_vals["securityIcon"]);
+      tg_set_source('tg_malware_icon', tg_vals["malwareIcon"]);
+      tg_set_source('tg_ssl_icon', tg_vals["sslIcon"]);
+
+      document.getElementsByClassName("tg_SealCertDomain")[0].textContent = tg_vals["domain"];
+      document.getElementsByClassName("tg_domain_name")[0].textContent = tg_vals["domain"];
+      document.getElementsByClassName("tg_SealCertVerDateText")[0].textContent = tg_vals["verifiedDate"];
+      document.getElementsByClassName("tg_SealCertVerText")[0].textContent = tg_vals["verifiedText"];
+      document.getElementById("tg_certConScanText").textContent = tg_vals["pciStatus"];
+      document.getElementById("tg_certConScanDateText").textContent = tg_vals["pciDate"];
+      document.getElementById("tg_certConScanFreqText").textContent = tg_vals["pciFrequency"];
+      document.getElementById("tg_certConScanText").textContent = tg_vals["malwareText"];
+      //document.getElementById("tg_certConScanText2").textContent = tg_vals["malwareText2"];
+      document.getElementById("tg_certMalwareScanDateText").textContent = tg_vals["malwareDate"];
+      document.getElementById("tg_certConScanFrequencyText").textContent = tg_vals["malwareFrequency"];
+      //document.getElementById("tg_certConScanVendorText").textContent = tg_vals["malwareVendor"];
+      //document.getElementById("tg_certSslScanDateText").textContent = tg_vals["sslText"];
+      document.getElementById("tg_certSslScanVendorText").textContent = tg_vals["sslVendor"];
+      document.getElementById("tg_certSslScanExpText").textContent = tg_vals["sslExpirationDate"];
+      document.getElementsByClassName("tg_domain_only")[0].textContent = tg_vals["domain"];
+      tg_set_href('tg_moreDetails', "https://app.trustguard.com/certificate/" + document.getElementsByClassName("tg_domain_only")[0].textContent);
+
+      //Remove the www from anywhere it is displayed (we leave it on the certificate url though)
+      const newDomain = tg_vals["domain"].replace("www.", "");
+
+      document.getElementsByClassName("tg_SealCertDomain")[0].textContent = newDomain;
+      document.getElementsByClassName("tg_domain_name")[0].textContent = newDomain;
+
+      let sealParagraph = "";
+
+      if (
+        tg_vals["malwareStatus"].toLowerCase() === "clean" &&
+        tg_vals["sslStatus"].toLowerCase() === "active"
+      ) {
+        sealParagraph =
+          "has successfully passed a recent PCI DSS Security Scan, an Internal Malware Scan, and has had their SSL Certificate Validated by Trust Guard.";
+      } else if (tg_vals["malwareStatus"].toLowerCase() === "clean") {
+        sealParagraph =
+          "has successfully passed a recent PCI DSS Security Scan and an Internal Malware Scan by Trust Guard.";
+      } else {
+        sealParagraph =
+          "has successfully passed a recent PCI DSS Security Scan and has had their SSL Certificate Validated by Trust Guard.";
+      }
+
+      document.getElementsByClassName("sealParagraph")[0].textContent = sealParagraph;
+
+      if (JSON.stringify(data).length > 500) {
+        return null;
+      }
+    },
+    function (xhr) {
+      //console.error(xhr); 
+    }
+  );
+}
+
+function tg_load_animations(id, type) {
+  if (type === "side_left") {
+
+    if (document.getElementById('tg_certSealToggle')) {
+      document.getElementById('tg_certSealToggle').onclick = function () {
+
+        tg_add_class('tg_SealCertificateLeft', 'tg_hideCertificate');
+        tg_remove_class('tg_SealCertificateLeft', 'tg_showCertificate');
+      }
+    }
+
+    if (document.getElementById('tg_1-left')) {
+      document.getElementById('tg_1-left').onclick = function () {
+        tg_remove_class('tg_SealCertificateLeft', 'tg_hideCertificate');
+        tg_add_class('tg_SealCertificateLeft', 'tg_showCertificate');
+        tg_gdata(id);
+      }
+    }
+
+  } else if (type === "side_right") {
+    if (document.getElementById('tg_1-left')) {
+      document.getElementById('tg_certSealToggleRight').onclick = function () {
+
+        tg_add_class('tg_SealCertificateRight', 'tg_hideCertificateRight');
+        tg_remove_class('tg_SealCertificateRight', 'tg_showCertificateRight');
+      }
+    }
+
+    if (document.getElementById('tg_1-left')) {
+      document.getElementById('tg_1-right').onclick = function () {
+        tg_remove_class('tg_SealCertificateRight', 'tg_hideCertificateRight');
+        tg_add_class('tg_SealCertificateRight', 'tg_showCertificateRight');
+        tg_gdata(id);
+      }
+    }
+  } else if (type === "bottom_left") {
+
+    if (document.getElementById('tg_certSealTogglebleft')) {
+      document.getElementById('tg_certSealTogglebleft').onclick = function () {
+        tg_add_class('tg_SealCertificatebleft', 'tg_hideCertificatebLeft');
+        tg_remove_class('tg_SealCertificatebleft', 'tg_showCertificatebLeft');
+      }
+    }
+
+    if (document.getElementById('tg_1-bleft')) {
+      document.getElementById('tg_1-bleft').onclick = function () {
+        tg_remove_class('tg_SealCertificatebleft', 'tg_hideCertificatebLeft');
+        tg_add_class('tg_SealCertificatebleft', 'tg_showCertificatebLeft');
+        tg_gdata(id);
+      }
+    }
+
+  } else if (type === "bottom_right") {
+
+    if (document.getElementById('tg_certSealTogglebRight')) {
+      document.getElementById('tg_certSealTogglebRight').onclick = function () {
+        tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+        tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+      }
+    }
+
+    if (document.getElementById('tg_1-bright')) {
+      document.getElementById('tg_1-bright').onclick = function () {
+        tg_remove_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+        tg_add_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+        tg_gdata(id);
+      }
+    }
+  }
+
+  const mouseTargetBL = document.getElementById('tg_SealCertificatebleft');
+  const mouseTargetBR = document.getElementById('tg_SealCertificatebRight');
+  const mouseTargetL = document.getElementById('tg_SealCertificateLeft');
+  const mouseTargetR = document.getElementById('tg_SealCertificateRight');
+
+  var tg_mouse_leave = setInterval(function () {
+    if (mouseTargetBL) {
+      mouseTargetBL.addEventListener('mouseleave', e => {
+        tg_remove_class('tg_SealCertificatebleft', 'tg_showCertificatebLeft');
+        tg_add_class('tg_SealCertificatebleft', 'tg_hideCertificatebLeft');
+      });
+    }
+    if (mouseTargetBR) {
+      mouseTargetBR.addEventListener('mouseleave', e => {
+        tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+        tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+      });
+    }
+    if (mouseTargetL) {
+      mouseTargetL.addEventListener('mouseleave', e => {
+        tg_remove_class('tg_SealCertificateLeft', 'tg_showCertificate');
+        tg_add_class('tg_SealCertificateLeft', 'tg_hideCertificate');
+      });
+    }
+    if (mouseTargetR) {
+      mouseTargetR.addEventListener('mouseleave', e => {
+        tg_remove_class('tg_SealCertificateRight', 'tg_showCertificateRight');
+        tg_add_class('tg_SealCertificateRight', 'tg_hideCertificateRight');
+      });
+    }
+
+
+    document.addEventListener('mouseup', e => {
+      if (document.getElementById('tg_SealCertificatebleft')) {
+        if (document.getElementById('tg_SealCertificatebleft').classList.contains('tg_showCertificatebLeft')) {
+          tg_remove_class('tg_SealCertificatebleft', 'tg_showCertificatebLeft');
+          tg_add_class('tg_SealCertificatebleft', 'tg_hideCertificatebLeft');
+        }
+      }
+    });
+  }, 500);
+
+  setTimeout(function () {
+    clearInterval(tg_mouse_leave);
+    tg_mouse_leave = null;
+  }, 5000);
+
+  // document.addEventListener('blur', e => {
+  //   console.log("123");
+  //   if (tg_jq(e.target).closest("#tg_1-left").length === 0) {
+  //     tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+  //     tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+  //   }
+  // });
+  // document.addEventListener('blur', e => {
+  //   if (tg_jq(e.target).closest("#tg_1-right").length === 0) {
+  //     tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+  //     tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+  //   }
+  // });
+  // document.addEventListener('blur', e => {
+  //   if (tg_jq(e.target).closest("#tg_1-bleft").length === 0) {
+  //     tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+  //     tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+  //   }
+  // });
+  // document.addEventListener('blur', e => {
+  //   if (tg_jq(e.target).closest("#tg_1-bright").length === 0) {
+  //     tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+  //     tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+  //   }
+  // });
+}
+
+
+
+function tgCheckSealRight() {
+  document.addEventListener('click', e => {
+
+    var tg_ew = document.getElementById('tg_SealCertificatebRight');
+    var tg_ew_style = window.getComputedStyle(tg_ew);
+    var tg_ew_bottom = tg_ew_style.getPropertyValue('bottom');
+
+    let bottom = parseInt(tg_ew_bottom.replace('px', ''), 10);
+    if (bottom != undefined) {
+      if (bottom >= 0) {
+        tg_remove_class('tg_SealCertificatebRight', 'tg_showCertificatebRight');
+        tg_add_class('tg_SealCertificatebRight', 'tg_hideCertificatebRight');
+      }
+    }
+  });
+
+  document.getElementById('tg_1-bright').addEventListener('click', e => {
+    if (!e.target.href) {
+      e.stopPropagation();
+      return false;
+    }
+  });
+  document.getElementsByClassName("tg_SealCertContainer")[0].addEventListener('click', e => {
+    if (!e.target.href) {
+      e.stopPropagation();
+      return false;
+    }
+  });
+
+  var img = new Image();
+  img.onload = function () {
+    document.body.appendChild(img);
+    var height = img.height;
+    var width = img.width;
+    document.body.removeChild(img);
+
+    // code here to use the dimensions
+    if (width <= 1 || width == 300) {
+      tg_hide_by_class('tgBright');
+    } else {
+
+      var tg_ew = document.getElementById('tgfloat-img');
+      var tg_ew_style = window.getComputedStyle(tg_ew);
+      var tg_ew_width = tg_ew_style.getPropertyValue('max-width');
+
+      document.getElementById('tgfloat-img').style.width = tg_ew_width;
+      document.getElementsByClassName('tgBlockText')[0].style.display = 'block';
+
+    }
+  };
+  img.src = document.getElementById('tgfloat-img').src;
+}
+
+function tgCheckSealLeft() {
+  var img = new Image();
+  img.onload = function () {
+    document.body.appendChild(img);
+    var height = img.height;
+    var width = img.width;
+    document.body.removeChild(img);
+    // code here to use the dimensions
+    if (width <= 1 || width == 300) {
+      tg_hide_by_class('tgLeft');
+    } else {
+      document.getElementsByClassName('tgBlockText')[0].style.display = 'block';
+    }
+  };
+  img.src = document.getElementById('tgfloat-img').src;
+}
